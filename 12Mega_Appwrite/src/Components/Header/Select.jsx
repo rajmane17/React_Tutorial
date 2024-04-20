@@ -16,7 +16,7 @@ function Select({
         className={`w-full`}
         ref={ref}
       >
-        {options ? map((option) => (
+        {options?.map((option) => (
             <option value={option} key={option}>
                 {option}
             </option>
