@@ -19,3 +19,6 @@ function PostCard({$id, featuredImage, title}) {
 }
 
 export default PostCard
+
+
+

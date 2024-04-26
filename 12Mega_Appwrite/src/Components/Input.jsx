@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import React, { forwardRef } from "react"
 import { useId } from "react"
 
 const Input = forwardRef( function Input ({
@@ -25,4 +25,4 @@ const Input = forwardRef( function Input ({
 
 
 
-export default Input
+export default React.forwardRef(Input)

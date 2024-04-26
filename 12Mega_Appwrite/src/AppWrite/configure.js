@@ -103,7 +103,7 @@ export class Services {
 
     async uploadFile (file){
         try {
-            // yaha hume return me ek fileId milega, aur hum create post karte time featured image ko id hi pass karenge
+            // yaha hume return me ek fileId milega, aur hum create post karte time featuredimage ko id hi pass karenge
             return await this.Storage.createFile(
                 config.AppwriteBucketId,
                 ID.unique(),
@@ -115,7 +115,7 @@ export class Services {
         }
     }
 
-    async deleteFile ( fileId){
+    async deleteFile (fileId){
         try {
             return await this.Storage.deleteFile(
                 config.AppwriteBucketId,
