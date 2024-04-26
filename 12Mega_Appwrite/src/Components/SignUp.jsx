@@ -19,19 +19,20 @@ function SignUp() {
         try {
             const session = await authService.createAccount(data);
             if (session) {
-                const userCreated = await authService.getCurrentUser(userData);
+                const userCreated = await authService.getCurrentUser();
                 if (userCreated) {
                     dispatch(login(userCreated));
                     navigate("/");
                 }
             }
         } catch (error) {
-            console.log(error);
+            setError(error.message);
         }
     }
 
     return (
         <>
+        
             <form onSubmit={handleSubmit(signup)}>
                 <Input label="Name" placeholder="Enter Your Name" type="text" {...register("Name"), {
                     required: true
@@ -46,7 +47,7 @@ function SignUp() {
                     required: true,
                 }} />
                 <CommonBtn type='submit' className='w-full'>
-                    Sign In
+                    createAccount
                 </CommonBtn>
             </form>
         </>
