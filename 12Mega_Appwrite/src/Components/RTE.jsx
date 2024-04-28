@@ -14,7 +14,8 @@ function RTE({name, control, defaultValue="", label}) {
         <Editor 
         initialValue={defaultValue}
         init={{
-            initialValue:defaultValue,
+            initialValue:{defaultValue},
+            // it is by default pixels, so we dont need to mention it.
             height:500,
             menubar:true,
             plugins:[],
@@ -29,3 +30,4 @@ function RTE({name, control, defaultValue="", label}) {
 }
 
 export default RTE
+

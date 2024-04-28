@@ -7,6 +7,7 @@ import CommonBtn from "./CommonBtn"
 import Input from "./Input"
 import { useDispatch } from "react-redux"
 import authService from '../AppWrite/Auth'
+import Logo from "./Logo"
 
 function Login() {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ function Login() {
   const login = async (data) => {
     setError("");
     try {
-
       const session = await authService.login(data)
       if (session) {
         const userData = await authService.getCurrentUser()
