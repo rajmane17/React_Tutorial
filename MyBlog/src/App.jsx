@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-import {useDispatch} from "react-redux"
-import {Outlet} from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { Outlet } from "react-router-dom"
 import authService from "./AppWrite/Auth.js"
-import {Login, logOut} from "./Store/AuthSlice.js"
-import {Navbar, Footer} from "./Components/index.js"
+import { Login, logOut } from "./Store/AuthSlice.js"
+import { Navbar, Footer } from "./Components/index.js"
 
 function App() {
 
@@ -14,32 +14,32 @@ function App() {
   useEffect(() => {
     authService.getCurrentUser().then(
       (userData) => {
-        if(userData){
+        if (userData) {
           dispatch(Login(userData));
-        }else{
+        } else {
           dispatch(logOut());
         }
       }
     ).catch(
-      (error) => {console.log(error)}
+      (error) => { console.log(error) }
     ).finally(
-      () => {setLoading(false)}
+      () => { setLoading(false) }
     )
   }, [])
 
-  if(loading) {
+  if (loading) {
     <h1>Loading...</h1>
-  }else{
+  } else {
     <>
-    <div className='w-full bg-slate-800 min-h-screen flex flex-wrap content-between'>
-      <div  className='w-full block'>
-        <Navbar />
-        <main>
-          Todo: {/* <Outlet /> */}
-        </main>
-        <Footer />
+      <div className='w-full bg-slate-800 min-h-screen flex flex-wrap content-between'>
+        <div className='w-full block'>
+          <Navbar />
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
     </>
   }
 }
