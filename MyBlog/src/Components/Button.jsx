@@ -8,9 +8,9 @@ const Button = ({
   type="button",
   ...props
 }) => {
-
+  const id = useId()
   return (
-    <button className={`text-center py-3 px-1 rounded-sm ${bgColor} ${textColor}`} type={type}>
+    <button className={`text-center py-3 px-1 rounded-sm ${bgColor} ${textColor}`} type={type} id={id}>
       {children}
     </button>
   )

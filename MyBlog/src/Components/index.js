@@ -11,9 +11,9 @@ export {
     Footer,
     Navbar,
     Logoutbtn,
-    Input,
     Login,
     Profile,
     Sidebar,
-    Signup
+    Signup,
+    Input
 }
