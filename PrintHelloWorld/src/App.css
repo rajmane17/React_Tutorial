@@ -1,0 +1,11 @@
+button{
+  background-color: aqua;
+  text-align: center;
+  color: red;
+  border-radius: 4px;
+  outline: auto;
+  padding: 5px 10px;
+  font-size: large;
+  font-weight: 600;
+}
+

@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux'
 import authService from '../AppWrite/Auth'
 import { Login, logOut } from '../Store/AuthSlice'
 import { useNavigate, Link, NavLink } from 'react-router-dom'
-import { Input, Button } from "./index"
+import { Button } from "./index"
+import Input from './Input'
 import { useForm } from 'react-hook-form'
 
 function Signup() {
@@ -35,7 +36,6 @@ function Signup() {
           <Input placeholder="Enter Your Full Name" label="Full Name : " type="text" {...register("FullName"),{required : true}}/>
           <Input placeholder="Enter Your Email" label="Email : " type="email" {...register("Email"),{required:true}}/>
           <Input placeholder="Enter Your Password" label="Password : " type="Password" {...register("Password"),{required:true}}/>
-          <Input placeholder="Enter Your Number" label="Phone No. : " type="number" {...register("Number"),{required:true}}/>
           <Button type="submit">
             SignUp
           </Button>

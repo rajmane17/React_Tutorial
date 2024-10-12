@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import {useForm} from 'react-hook-form'
-import {Link, Navlink, useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import {useDispatch} from "react-redux"
 import {Input, Button} from "./index.js"
 import authService from "../AppWrite/Auth.js"
 import { Login, logOut } from '../Store/AuthSlice.js' 
 
-const Login = () => {
+const LoginForm = () => {
   const {handleSubmit, register} = useForm();
   const Dispatch = useDispatch();
   const navigate = useNavigate();
@@ -44,6 +44,11 @@ const Login = () => {
             </Button>
           </div>
         </div>
+        <h4>
+          New User ? <Link to="/Signup">
+          SignUp
+          </Link>
+        </h4>
       </div>
     </form>
   )
